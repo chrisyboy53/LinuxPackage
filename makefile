@@ -1,12 +1,20 @@
 CC=gcc
-CFLAGS=-mwindows -c
+CFLAGS=-c
 EXECUTABLE=hw.exe
 PREFIX=/bin
+OS=$(shell uname -s)
+
+ifeq ($(OS),MINGW64_NT-10.0)
+	CFLAGS += -mwindows
+endif
 
 all: executable
 
 install:
 	cp bin/$(EXECUTABLE) $(PREFIX)
+
+detect:
+	echo $(shell uname -s)
 
 executable: bin/ build/ build/main.o
 	$(CC) -o bin/$(EXECUTABLE) build/main.o;
