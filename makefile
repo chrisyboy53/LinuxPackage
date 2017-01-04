@@ -2,9 +2,9 @@ CC=gcc
 CFLAGS=-c
 EXECUTABLE=hw.exe
 PREFIX=/bin
-OS=$(shell uname -s)
+OS=$(shell uname -o)
 
-ifeq ($(OS),MINGW64_NT-10.0)
+ifeq ($(OS),Msys)
 	CFLAGS += -mwindows
 endif
 
