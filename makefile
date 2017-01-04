@@ -14,7 +14,7 @@ install:
 	cp bin/$(EXECUTABLE) $(PREFIX)
 
 detect:
-	echo $(shell uname -s)
+	echo $(shell uname -o)
 
 executable: bin/ build/ build/main.o
 	$(CC) -o bin/$(EXECUTABLE) build/main.o;
