@@ -16,3 +16,7 @@ make
 
 + MinGW
 	+ Compiled using `gcc`
++ OSX
+	+ Compiled using `clang++`
++ Linux
+	+ Compiled using `gcc`
