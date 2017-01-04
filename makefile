@@ -6,7 +6,7 @@ OS=$(shell uname -o)
 
 ifeq ($(OS),Msys)
 	CFLAGS += -mwindows
-	EXECUTABLE +=.exe
+	EXECUTABLE :=$(EXECUTABLE).exe
 endif
 
 all: executable
