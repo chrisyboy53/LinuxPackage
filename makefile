@@ -1,11 +1,12 @@
 CC=gcc
 CFLAGS=-c
-EXECUTABLE=hw.exe
+EXECUTABLE=hw
 PREFIX=/bin
 OS=$(shell uname -o)
 
 ifeq ($(OS),Msys)
 	CFLAGS += -mwindows
+	EXECUTABLE +=.exe
 endif
 
 all: executable
